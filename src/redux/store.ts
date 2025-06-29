@@ -1,11 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from './features/counter/counterSlice'
+import logger from './middlewares/logger'
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
   },
-})
+
+  middleware: (getDefaultMiddlewere) => getDefaultMiddlewere().concat(logger)
+
+});
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>
