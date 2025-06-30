@@ -28,17 +28,35 @@
 
 
 
+// const employee = {
+//     name: "Mir",
+//     address: {country: "Bangladesh", city: "Dhaka"},
+// };
+
+// const employee2 = {
+//     ...employee,
+//     name: "Mezba",
+//     address: {...employee.address, city: "Chittagong"},
+
+// };
+// console.log(employee == employee2);
+// console.log(employee);
+// console.log(employee2);
+
+
+
+
+import {produce} from "immer";
 const employee = {
     name: "Mir",
     address: {country: "Bangladesh", city: "Dhaka"},
 };
 
-const employee2 = {
-    ...employee,
-    name: "Mezba",
-    address: {...employee.address, city: "Chittagong"},
-
-};
+const employee2 = produce(employee, (draft) =>{
+    
+    draft.name = "Mezba";
+    draft.address.city = "Chittagong";
+}) ;
 console.log(employee == employee2);
 console.log(employee);
 console.log(employee2);
