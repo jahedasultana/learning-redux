@@ -1,23 +1,44 @@
 //* pure function
 
-const add = (a, b) => a + b;
+// const add = (a, b) => a + b;
 
-console.log(add(2, 5));
+// console.log(add(2, 5));
 
 
 //* Impure function 
 
-let total = 0;
+// let total = 0;
 
-const addToTotal = (amount) => (total = total + amount);
+// const addToTotal = (amount) => (total = total + amount);
 
-console.log(addToTotal(4));
+// console.log(addToTotal(4));
 
-const rendomNumber = (amount) =>{
-    return amount + Math.random();
+
+
+// const rendomNumber = (amount) =>{
+//     return amount + Math.random();
+// };
+
+// console.log(rendomNumber(3));
+// console.log(rendomNumber(3));
+// console.log(rendomNumber(3));
+// console.log(rendomNumber(3));
+
+
+
+
+
+const employee = {
+    name: "Mir",
+    address: {country: "Bangladesh", city: "Dhaka"},
 };
 
-console.log(rendomNumber(3));
-console.log(rendomNumber(3));
-console.log(rendomNumber(3));
-console.log(rendomNumber(3));
+const employee2 = {
+    ...employee,
+    name: "Mezba",
+    address: {...employee.address, city: "Chittagong"},
+
+};
+console.log(employee == employee2);
+console.log(employee);
+console.log(employee2);
